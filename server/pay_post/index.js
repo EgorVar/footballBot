@@ -6,7 +6,7 @@ const md5 = require('md5');
 module.exports = async (req, res) => {
     var fakeIP = false;
     var order = req.body;
-    var ips = ["136.243.38.147", "136.243.38.149", "136.243.38.150", "136.243.38.151", "136.243.38.189", "136.243.38.108"];
+    var ips = ["136.243.38.147", "136.243.38.149", "136.243.38.150", "136.243.38.151", "136.243.38.189", "136.243.38.108", "91.238.229.250"];
     await ips.forEach(ip => {
         if (req.connection.remoteAddress.indexOf(ip) != -1) {
             fakeIP = false;
