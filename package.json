@@ -32,7 +32,6 @@
     "nodemon": "^2.0.20",
     "prequest": "^1.0.0",
     "urlencode": "^1.1.0",
-    "vi-node-telegram-bot-api": "^1.0.4",
     "ws": "^7.4.1"
   }
 }

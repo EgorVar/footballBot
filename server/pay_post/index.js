@@ -4,7 +4,7 @@ const bd = require('../../database');
 const md5 = require('md5');
 
 module.exports = async (req, res) => {
-    var fakeIP = true;
+    var fakeIP = false;
     var order = req.body;
     var ips = ["136.243.38.147", "136.243.38.149", "136.243.38.150", "136.243.38.151", "136.243.38.189", "136.243.38.108"];
     await ips.forEach(ip => {
