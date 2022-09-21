@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../style.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подтверждение оплаты</title>
+    %%jsCode%%
+</head>
+<body style="display: flex; flex-direction: column;">
+    <img src="https://xn--80afo7al4d.xn----btbtarbil8ajk.xn--80adxhks/%D0%BD%D0%B0%D1%88-%D1%87%D0%B5%D0%BC%D0%BF%D0%B8%D0%BE%D0%BD%D0%B0%D1%82/img/logo.png" height=180 alt="">
+    <div>
+        <h1><span>Стоимость участия</span>%%orderValue%% ₽</h1>
+        <h1><span>Игровая группа</span>%%orderName%%</h1>
+        <h1><span>Наименование</span>%%orderDesc%%</h1>
+        <p style="margin: 20px;">Для оплаты нажмите кнопку "Оплатить", после чего будет открыта страница оплаты. Выберите любой удобный способ и оплатите участие.</p>
+        <hr>
+        <button id="pay">Оплатить</button>
+    </div>
+
+    <script type="text/javascript">
+        pay.onclick = () => {
+            window.location.replace(`${window.location.href}?redirect=payPage`);
+        }
+    </script>
+</body>
+</html>

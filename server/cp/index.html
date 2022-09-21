@@ -1,0 +1,345 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/svg+xml" href="svg/favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>База данных</title>
+	<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+	<style>
+	*:focus{
+    outline: none;
+		}
+
+		html, body{
+			margin: 0;
+			width: 100%;
+			display: flex;
+			overflow-x: hidden;
+			height: fit-content;
+			flex-direction: column;
+			background-color: #dfdfdf;
+		}
+
+		#search{
+			top: 0;
+			left: 0;
+			z-index: 2;
+			padding: 5px;
+			height: 50px;
+			display: flex;
+			position: fixed;
+			overflow: hidden;
+			align-items: center;
+			flex-direction: row;
+			width: calc(100% - 5px);
+			transition-duration: 200ms;
+			background-color: #efefef;
+			box-shadow: 0 0 5px darkgrey;
+			justify-content: space-between;
+			transition-timing-function: ease-out;
+			transition-property: height, padding;
+		}
+		.hiddenSearch{
+			height: 0!important;
+			padding: 0!important;
+		}
+		@media (max-width: 640px) {
+			#search{
+				padding: 5px;
+				height: 25%;
+				align-items: center;
+				flex-direction: column-reverse;
+			}
+			table{
+				margin-top: 110px!important;
+			}
+			#userTable tr{
+				margin: 5px 0!important;
+				flex-basis: 100%!important;
+			}
+			#infoMessage > div > h1{
+				font-size: 20px!important;
+			}
+			#infoMessage > div > ul{
+				font-size: 16px!important;
+			}
+			#editMessage > div > h1{
+				font-size: 22px!important;
+			}
+			#editMessage > div > button{
+				font-size: 14px!important;
+			}
+		}
+		#search .sort{
+			display: flex;
+			align-items: center;
+		}
+		#search .sort select{
+			border: 0;
+			margin: 5px;
+			padding: 5px;
+			height: 40px;
+			font-size: 16px;
+			border-radius: 15px;
+			font-family: sans-serif;
+			box-shadow: 0 0 2px grey;
+			background-color: rgb(225, 225, 225);
+		}
+		#search .sort select:focus{
+			outline: none;
+		}
+		#search .sort button{
+			border: 0;
+			margin: 5px;
+			font-size: 20px;
+			padding: 5px 10px;
+			border-radius: 4px;
+			font-family: sans-serif;
+			box-shadow: 0 0 2px grey;
+			transition-duration: 200ms;
+			transition-timing-function: ease-out;
+			transition-property: background-color;
+			background-color: rgb(225, 225, 225);
+		}
+		#search .sort button:focus{
+			outline: none;
+			background-color: lightskyblue;
+		}
+		#search .search{
+			display: flex;
+			align-items: center;
+		}
+		#search .search input{
+			border: 0;
+			width: 100%;
+			padding: 5px;
+			font-size: 20px;
+			border-radius: 5px;
+			font-family: sans-serif;
+			box-shadow: 0 0 2px grey;
+			background-color: rgb(225, 225, 225);
+		}
+		#search .search button{
+			border: 0;
+			margin: 10px;
+			display: flex;
+			font-size: 18px;
+			padding: 8px;
+			border-radius: 10px;
+			align-items: center;
+			justify-content: center;
+			font-family: sans-serif;
+			box-shadow: 0 0 2px grey;
+			transition-duration: 200ms;
+			transition-timing-function: ease-out;
+			transition-property: background-color;
+			background-color: rgb(225, 225, 225);
+		}
+		#search .search button:focus{
+			outline: none;
+			background-color: lightskyblue;
+		}
+		#search .search button img{
+			width: 25px;
+			margin-right: 5px;
+		}		
+	
+		.menu ul {
+			font-family: sans-serif;
+			margin: 0; /* Обнуляем значение отступов */
+			padding: 4px; /* Значение полей */
+		}
+		.menu li {
+			color: white;
+			display: inline-block; /* Отображать как строчный элемент */
+			margin-right: 15px; /* Отступ слева */
+			border: 1.5px solid #71bee7; /* Рамка вокруг текста */
+			border-radius: 20px;
+			padding: 2px 8px; /* Поля вокруг текста */
+			background-color: #1e9ae0;
+			font-size: 18px;
+			white-space: nowrap;
+			margin: 6px;
+		}
+		.menu li a {
+			text-decoration: none;
+			color: black;
+		}
+		.menu li:hover {
+			background-color: #00d0ff;
+			cursor: pointer;
+		}
+
+		table{
+			margin-top: 60px;
+			<!-- user-select: none; -->
+			<!-- -ms-user-select: none; -->
+			<!-- -moz-user-select: none; -->
+			<!-- -khtml-user-select: none; -->
+			<!-- -webkit-user-select: none; -->
+			<!-- -webkit-touch-callout: none; -->
+		}
+		#userTable{
+			<!-- display: flex; -->
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		#userTable tr{
+			height: 88vh;
+			margin: 5px;
+			<!-- padding: 5px; -->
+			display: flex;
+			overflow: hidden;
+			flex-basis: 300px;
+			<!-- border-radius: 6px; -->
+			height: fit-content;
+			flex-direction: column;
+			transition-duration: 400ms;
+			background-color: #efefef;
+			box-shadow: 0 0 6px #80808066;
+			transition-property: box-shadow;
+		}
+		#userTable tr iframe {
+		 height: 88vh;
+		}
+		#userTable td{
+			padding: 0;
+			display: flex;
+		}
+		#userTable tr .image{
+			height: 310px;
+			display: flex;
+			overflow: hidden;
+			margin-top: -5px;
+			margin-left: -5px;
+			margin-bottom: 5px;
+			align-items: center;
+			justify-content: center;
+			width: calc(100% + 10px);
+			box-shadow: 0 0 6px grey;
+		}
+		#userTable tr .image img{
+			width: 100%;
+		}
+		#userTable tr .info{
+			margin-top: 5px;
+			justify-content: space-between;
+		}
+		#userTable tr .info span:first-child{
+			font-weight: bold;
+			margin-right: 5px;
+		}
+		#userTable tr .info span{
+			display: flex;
+			font-size: 16px;
+			flex-direction: row;
+			align-items: center;
+			white-space: nowrap;
+			font-family: sans-serif;
+		}
+		#userTable tr .info span img{
+			width: 20px;
+			margin-right: 2px;
+		}
+
+		#notification{
+			right: 0;
+			bottom: 0;
+			height: 0;
+			display: flex;
+			position: fixed;
+			padding: 0 20px;
+			font-size: 16px;
+			overflow: hidden;
+			width: fit-content;
+			max-width: 60%;
+			align-items: center;
+			align-content: center;
+			justify-content: center;
+			font-family: sans-serif;
+			transition-property: all;
+			border-radius: 3px 0 0 0;
+			transition-duration: 0.4s;
+			z-index: 99999;
+		}
+		#notification span{
+			bottom: 0;
+			width: 100%;
+			height: 2.5px;
+			position: absolute;
+			text-align: center;
+			transition-property: all;
+			transition-duration: 0.4s;
+		}
+		@media (min-width: 1200px) {
+			#notification{
+				max-height: 70px;
+				font-size: 24px;
+				padding: 0 24px;
+			}
+		}
+		@media (min-width: 768px) and (max-width: 1200px) {
+			#notification{
+				max-height: 65px;
+				font-size: 22px;
+				padding: 0 23px;
+			}
+		}
+		@media (max-width: 767px) {
+			#notification{
+				max-height: 60px;
+				font-size: 22px;
+				padding: 0 23px;
+			}
+		}
+		@media (max-width: 480px) {
+			#notification{
+				max-height: 55px;
+				font-size: 16px;
+				padding: 0 20px;
+			}
+		}
+	</style>
+</head>
+<body>
+    <input type="text" id="style" value='%%hiddenMark%%' hidden>
+    <input type="text" id="editStyle" value='%%hiddenEdit%%' hidden>
+    <input type="text" id="resetStyle" value='%%hiddenReset%%' hidden>
+    <input type="text" id="acceptStyle" value='%%hiddenAccept%%' hidden>
+    <div id="search" class="search_no_hidden">
+	<ul class="menu">
+		<img style="position: absolute; left: 5px; top:15px; width: 38px; height: 30px;" src="http://xn--80afo7al4d.xn----btbtarbil8ajk.xn--80adxhks/наш-чемпионат/img/logo.png" height="50"></img>
+		<li><div class="general">Главная</div></li>
+		<li><div class="link" data-src="administrators">Администраторы</a></li>
+		<li><div class="link" data-src="record_settings">Настройки записи</a></li>
+		<li><div class="link" data-src="registrar_settings">Настройки регистрации</a></li>
+		<li><div class="link" data-src="registrar_user">Пользователи</a></li>
+	</ul>
+
+        
+    </div>
+	<table><tbody id="userTable">
+	<tr>
+		<td>
+		 <iframe class="iframe" style="width: 100%;"></iframe>
+		</td>
+	</tr>
+	</tbody></table>
+	<script>
+		$( ".general" ).click(function(){  
+				$(".iframe").attr("src", "http://xn--80afo7al4d.xn----btbtarbil8ajk.xn--80adxhks/");
+		});
+		$( ".link" ).click(function(){  
+			if($(this).attr("data-src")){
+				$(".iframe").attr("src", "%%server_url%%" + encodeURIComponent($(this).attr("data-src")) + "/");
+			}
+		});
+	</script>
+
+    <script src="notification.js"></script>
+    <script src="script.js?v=0.0.1"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Настройки регистрации</title>
+</head>
+<body>
+    <div id="settings">
+        <h1>Настройки регистрации</h1>
+        <button id="snap_chat">Привязать чат с модерацией</button>
+        <button id="edit_questions">Редактирование контрольных вопросов</button>
+    </div>
+    <div id="edit_settings" class="settings">
+        <div class="text_area">
+            <span>Вопрос - Фамилия</span>
+            <textarea id="textarea_0"></textarea>
+            <button id="save_text_0" style="margin-top: 5px;">Сохранить текст</button>
+        </div>
+        <div class="text_area">
+            <span>Вопрос - Имя</span>
+            <textarea id="textarea_1"></textarea>
+            <button id="save_text_1" style="margin-top: 5px;">Сохранить текст</button>
+        </div>
+        <div class="text_area">
+            <span>Вопрос - Отчество</span>
+            <textarea id="textarea_2"></textarea>
+            <button id="save_text_2" style="margin-top: 5px;">Сохранить текст</button>
+        </div>
+        <div class="text_area">
+            <span>Вопрос - Дата Рождения</span>
+            <textarea id="textarea_3"></textarea>
+            <button id="save_text_3" style="margin-top: 5px;">Сохранить текст</button>
+        </div>
+        <div class="text_area">
+            <span>Вопрос - Vk Link</span>
+            <textarea id="textarea_4"></textarea>
+            <button id="save_text_4" style="margin-top: 5px;">Сохранить текст</button>
+        </div>
+        <div class="text_area">
+            <span>Вопрос - номер телефона</span>
+            <textarea id="textarea_5"></textarea>
+            <button id="save_text_5" style="margin-top: 5px;">Сохранить текст</button>
+        </div>
+        <div class="text_area">
+            <span>Вопрос - фото</span>
+            <textarea id="textarea_6"></textarea>
+            <button id="save_text_6" style="margin-top: 5px;">Сохранить текст</button>
+        </div>
+        <div class="text_area">
+            <span>Текст - Удачное прохождение регистрации</span>
+            <textarea id="textarea_7"></textarea>
+            <button id="save_text_7" style="margin-top: 5px;">Сохранить текст</button>
+        </div>
+        <div class="text_area">
+            <span>Текст - Удачное прохождение теста</span>
+            <textarea id="textarea_8"></textarea>
+            <button id="save_text_8" style="margin-top: 5px;">Сохранить текст</button>
+        </div>
+        <div class="text_area">
+            <span>Текст - Ошибка при прохождении теста</span>
+            <textarea id="textarea_9"></textarea>
+            <button id="save_text_9" style="margin-top: 5px;">Сохранить текст</button>
+        </div>
+        <div class="text_area">
+            <span>Текст - Подтверждения информации</span>
+            <textarea id="textarea_10"></textarea>
+            <button id="save_text_10" style="margin-top: 5px;">Сохранить текст</button>
+        </div>
+        <div class="text_area">
+            <span>Ссылки на чат - [Текст](Ссылка), каждый чат с новой строки, закрыть чат - 🔒</span>
+            <textarea id="textarea_11"></textarea>
+            <button id="save_text_11" style="margin-top: 5px;">Сохранить ссылки</button>
+        </div>
+        <div id="buttons">
+            <span id="span">Тексты кнопок</span>
+            <div class="input">
+                <span>Правила - [Текст](Ссылка)</span>
+                <input type="text" id="input_0">
+            </div>
+            <div class="input">
+                <span>Согласие с правилами</span>
+                <input type="text" id="input_1">
+            </div>
+            <div class="input">
+                <span>Подтвержение информиции</span>
+                <input type="text" id="input_2">
+            </div>
+            <button id="save_inputs" style="margin-top: 5px;">Сохранить кнопки</button>
+        </div>
+        <div id="pay">
+            <span>Free-Kassa</span>
+            <div class="input">
+                <span>ID Магазина</span>
+                <input type="number" id="input_pay_0">
+            </div>
+            <div class="input">
+                <span>ID Заказа</span>
+                <input type="number" id="input_pay_1">
+            </div>
+            <div class="input">
+                <span>Сумма</span>
+                <input type="number" id="input_pay_2">
+            </div>
+            <div class="input">
+                <span>Серетное слово</span>
+                <input type="text" id="input_pay_3">
+            </div>
+            <button id="save_pay_inputs" style="margin-top: 5px;">Сохранить кнопки</button>
+        </div>
+        <div id="questions">
+            <span>Настройка вопроса</span>
+            <div id="questions_board">
+            </div>
+            <button id="add_question">Добавить вопрос</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="notification.js"></script>
+</body>
+</html>

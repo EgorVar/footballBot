@@ -1,0 +1,265 @@
+*:focus {
+  outline: none;
+}
+
+html,
+body {
+  margin: 0;
+  overflow: auto;
+  min-height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  background-color: rgba(178, 235, 242, 0.2);
+}
+
+#helpPanel {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  z-index: 999;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  background-color: #3a7dd3;
+  justify-content: space-between;
+  box-shadow: 0 0 10px rgba(128, 128, 128, 0.4);
+}
+#helpPanel button {
+  border: 0;
+  margin: 10px;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-family: sans-serif;
+  transition-duration: 400ms;
+  background-color: ghostwhite;
+  transition-property: background-color;
+}
+#helpPanel button:focus {
+  background-color: #c1c1c1;
+}
+
+#teamNumber {
+  display: flex;
+  font-size: 18px;
+  align-items: center;
+  flex-direction: row;
+}
+#teamNumber span {
+  margin: 0 10px;
+  color: ghostwhite;
+  font-family: sans-serif;
+  text-shadow: 0 0 1px black;
+}
+#teamNumber div {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+#teamNumber div button {
+  border: 0;
+  width: 20px;
+  padding: 2px;
+  height: 20px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: ghostwhite;
+}
+#teamNumber div span {
+  margin: 0 5px;
+  font-size: 18px;
+  color: ghostwhite;
+  font-family: monospace;
+  text-shadow: 0 0 1px black;
+}
+
+#rosterPlayers {
+  display: flex;
+  overflow: auto;
+  flex-wrap: wrap;
+  margin: 10px auto;
+  max-height: 100%;
+  border-radius: 6px;
+  flex-direction: row;
+  justify-content: center;
+  width: calc(100% - 40px);
+  background-color: ghostwhite;
+  box-shadow: 0 0 10px rgba(128, 128, 128, 0.4);
+}
+.user {
+  cursor: move;
+  margin: 10px;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  overflow: hidden;
+  flex-basis: 200px;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 0 0 5px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.user-card__wrap {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-card__wrap p {
+  font-size: 24px;
+  font-weight: 600;
+  font-family: sans-serif;
+  color: #2980b9;
+}
+
+.user img {
+  height: 100%;
+}
+.user div {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  font-size: 16px;
+  position: absolute;
+  font-family: sans-serif;
+  transition-duration: 400ms;
+  justify-content: space-around;
+  transition-property: background-color;
+  background-color: rgba(248, 248, 255, 0.6);
+}
+.user div:hover {
+  background-color: rgba(248, 248, 255, 0.9);
+}
+
+#teams {
+  margin: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 300px;
+  border-radius: 6px;
+  justify-content: center;
+  width: calc(100% - 20px);
+}
+.team {
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  min-height: 250px;
+  flex-basis: 250px;
+  border-radius: 6px;
+  align-items: center;
+  flex-direction: column;
+  transition-duration: 400ms;
+  background-color: ghostwhite;
+  transition-property: box-shadow;
+  box-shadow: 0 0 10px rgba(128, 128, 128, 0.4);
+}
+.team input {
+  border: 0;
+  padding: 0;
+  width: 100%;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  margin: 5px 0 10px 0;
+  font-family: sans-serif;
+  background-color: transparent;
+}
+.team > span {
+  font-size: 12px;
+  margin: -10px 0 5px 0;
+  font-family: sans-serif;
+}
+
+.message {
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  align-items: flex-end;
+  justify-content: center;
+  height: calc(100% - 50px);
+  background-color: rgba(60, 60, 60, 0.5);
+}
+.message > div {
+  width: 300px;
+  display: flex;
+  overflow: auto;
+  max-width: 90%;
+  max-height: 80%;
+  flex-direction: column;
+  border-radius: 10px 10px 0 0;
+  background-color: ghostwhite;
+}
+.message > div h1 {
+  margin: 0;
+  font-size: 20px;
+  text-align: center;
+  padding: 15px 0 10px 0;
+  font-family: sans-serif;
+  border-bottom: 0.5px solid rgba(100, 100, 100, 0.4);
+}
+.message > div button {
+  width: 100%;
+  padding: 8px;
+  border-left: 0;
+  border-right: 0;
+  font-size: 16px;
+  font-family: sans-serif;
+  transition-duration: 400ms;
+  background-color: transparent;
+  transition-property: background-color;
+  border: 0.5px solid rgba(100, 100, 100, 0.4);
+  text-shadow: 0 0 1px rgba(128, 128, 128, 0.5);
+}
+.message > div button:focus {
+  background-color: rgba(128, 128, 128, 0.2);
+}
+.message > div #cansel {
+  color: red;
+  padding: 6px;
+  text-shadow: 0 0 1px coral;
+}
+
+#autoSort,
+#prize,
+#confPrize {
+  border: 0;
+  width: 90%;
+  padding: 10px;
+  font-size: 14px;
+  margin: 10px auto;
+  margin-top: 5px;
+  border-radius: 5px;
+  color: ghostwhite;
+  font-family: sans-serif;
+  text-shadow: 0 0 1px antiquewhite;
+  background-color: rgba(110, 159, 247, 1);
+  box-shadow: 0 0 10px rgba(128, 128, 128, 0.4);
+}
+
+h1 {
+  margin: 0;
+  font-size: 22px;
+  margin-top: 60px;
+  text-align: center;
+  font-family: monospace;
+}
+h2 {
+  margin: 0;
+  font-size: 22px;
+  text-align: center;
+  font-family: monospace;
+}

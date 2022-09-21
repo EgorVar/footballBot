@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="editStyle.css?v=0.1.6">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Информация о команде</title>
+</head>
+<body data-teamInfo='%%teamInfo%%' data-needUsers='%%needUsers%%'>
+    <div id="helpPanel">
+        <div id="teamNumber">
+            <span>Команды:</span>
+            <div>
+                <button id="addTeamNumber">+</button>
+                <span id="teamNumberSpan">1</span>
+                <button id="downTeamNumber">-</button>
+            </div>
+        </div>
+
+        <button id="save">Сохранить</button>
+    </div>
+    <h1>%%chatName%%</h1>
+    <h2>%%eventDate%%</h1>
+    <div id="rosterPlayers">
+    </div>
+    <div id="teams">
+    </div>
+    <div id="mobileEdit" class="message">
+        <div>
+            <h1>Выберите команду</h1>
+            <button id="cansel">Отмена</button>
+        </div>
+    </div>
+    <div id="prizeEdit" class="message">
+        <div>
+            <h1>Настройте призовые</h1>
+            <button id="cansel">Отмена</button>
+        </div>
+    </div>
+    <div id="placeEdit" class="message">
+        <div>
+            <h1>Выберите место</h1>
+            <button id="cansel">Отмена</button>
+        </div>
+    </div>
+    <button id="autoSort" hidden>Сортировка</button>
+    <button id="prize">Призовые</button>
+    
+    <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+    <script src="editScript.js?v=0.1.6"></script>
+</body>
+</html>

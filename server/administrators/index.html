@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контроль администраторов</title>
+</head>
+<body data-settings='%%settings%%' data-needUsers='%%needusers%%'>
+    <h1 class="title">Администраторы</h1>
+    <div id="allAdmins" class="infoPage"></div>
+    <div id="selectAdmin" class="infoPage">
+        <div>
+            <div>
+                <img src="../registrar_user_img/497736008.jpg">
+            </div>
+            <span>Ивченко Виктор</span>
+        </div>
+        <div>
+            <span>Возможности администратора:</span>
+            <div class="rules">
+                <span>Изменение команд</span>
+                <div class="button r button-3">
+                    <input type="checkbox" class="checkbox" id="editTeam">
+                    <div class="knobs"></div>
+                    <div class="layer"></div>
+                </div>
+            </div>
+            <div class="rules">
+                <span>Изменение настроек чатов</span>
+                <div class="button r button-3">
+                    <input type="checkbox" class="checkbox" id="editChatSettings">
+                    <div class="knobs"></div>
+                    <div class="layer"></div>
+                </div>
+            </div>
+            <div class="rules">
+                <span>Доступ к базе данных</span>
+                <div class="button r button-3">
+                    <input type="checkbox" class="checkbox" id="accessDateBase">
+                    <div class="knobs"></div>
+                    <div class="layer"></div>
+                </div>
+            </div>
+            <div class="rules">
+                <span>Видимость оценки</span>
+                <div class="button r button-3">
+                    <input type="checkbox" class="checkbox" id="viewMark">
+                    <div class="knobs"></div>
+                    <div class="layer"></div>
+                </div>
+            </div>
+            <div class="rules">
+                <span>Изменение базы данных</span>
+                <div class="button r button-3">
+                    <input type="checkbox" class="checkbox" id="editDateBase">
+                    <div class="knobs"></div>
+                    <div class="layer"></div>
+                </div>
+            </div>
+            <div class="rules">
+                <span>Прием пользователей</span>
+                <div class="button r button-3">
+                    <input type="checkbox" class="checkbox" id="acceptUser">
+                    <div class="knobs"></div>
+                    <div class="layer"></div>
+                </div>
+            </div>
+            <div class="rules">
+                <span>Запрос регистрации</span>
+                <div class="button r button-3">
+                    <input type="checkbox" class="checkbox" id="requestRegistration">
+                    <div class="knobs"></div>
+                    <div class="layer"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="text" hidden id="selectAdminId">
+    
+    <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

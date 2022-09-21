@@ -1,0 +1,38 @@
+{
+  "name": "vi_registrar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@qiwi/bill-payments-node-js-sdk": "^3.2.1",
+    "archiver": "^5.3.0",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
+    "cron": "^1.8.2",
+    "crypto": "^1.0.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "fetch-json": "^2.2.9",
+    "fs": "0.0.1-security",
+    "md5": "^2.2.1",
+    "mime-types": "^2.1.26",
+    "ms": "^2.1.3",
+    "node-fetch": "^2.6.1",
+    "node-php": "0.0.1",
+    "node-php-server": "^0.1.2",
+    "node-robokassa": "0.0.0",
+    "node-telegram-bot-api": "^0.59.0",
+    "nodemon": "^2.0.20",
+    "prequest": "^1.0.0",
+    "urlencode": "^1.1.0",
+    "vi-node-telegram-bot-api": "^1.0.4",
+    "ws": "^7.4.1"
+  }
+}

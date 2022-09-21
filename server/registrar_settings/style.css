@@ -1,0 +1,379 @@
+*{
+    transition-property: all;
+    transition-duration: 0.4s;
+}
+
+html, body{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #dfdfdf;
+}
+
+#settings{
+    padding: 10px;
+    display: flex;
+    overflow: hidden;
+    border-radius: 10px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #efefef;
+    box-shadow: 0 0 4px darkgrey;
+}
+button{
+    border: 0;
+    width: 90%;
+    margin: 10px auto;
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px darkgrey;
+}
+button:focus{
+    outline: none;
+    box-shadow: 0 0 5px blue;
+}
+
+h1{
+    font-size: 20px;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.settings{
+    height: 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.input{
+    width: 90%;
+    display: block;
+    position: relative;
+    border: 1px solid;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+.input span{
+    left: 5px;
+    top: -7px;
+    font-size: 16px;
+    font-weight: bold;
+    position: absolute;
+    font-family: sans-serif;
+    background-color: #efefef;
+}
+.input input{
+    border: 0;
+    margin: 0;
+    height: 30px;
+    padding: 5px;
+    font-size: 18px;
+    text-align: center;
+    width: calc(100% - 10px);
+    background-color: transparent;
+}
+.input input:focus{
+    outline: none;
+}
+
+#buttons{
+    justify-content: space-between;
+}
+
+textarea{
+    border: 0;
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    resize: none;
+    font-size: 16px;
+    font-family: sans-serif;
+    background: transparent;
+}
+textarea:focus {
+    outline: none;
+}
+
+.text_area, #questions, #buttons, #pay{
+    padding: 5px;
+    width: 200px;
+    margin: 20px;
+    height: 200px;
+    display: flex;
+    flex-basis: 300px;
+    text-align: center;
+    border-radius: 10px;
+    flex-direction: column;
+    background-color: #efefef;
+    box-shadow: 0 0 4px darkgrey;
+}
+#pay{
+    height: 220px;
+}
+.text_area span, #questions span, #buttons #span, #pay span{
+    font-size: 14px;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+.text_area button{
+    width: 95%;
+    margin: 5px auto;
+}
+
+.question, .edit_question{
+    width: 80%;
+    padding: 5px;
+    display: flex;
+    cursor: pointer;
+    overflow: hidden;
+    margin: 15px auto;
+    padding-bottom: 0;
+    border-radius: 5px;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 0 5px darkgrey;
+}
+.question span{
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+.question div{
+    padding: 5px;
+    font-size: 18px;
+    border: 1px solid;
+    font-family: sans-serif;
+    width: calc(100% + 15px);
+    background-color: lightcoral;
+}
+.question .right{
+    padding: 8px;
+    font-size: 20px;
+    border: 1px solid;
+    font-family: sans-serif;
+    width: calc(100% + 15px);
+    background-color: lightgreen;
+}
+
+.text_question{
+    margin-bottom: 20px;
+}
+.answer{
+    margin: 5px auto;
+}
+.right_answer{
+    margin-top: 20px;
+}
+
+#notification{
+    right: 0;
+    bottom: 0;
+    height: 0;
+    display: flex;
+    position: fixed;
+    padding: 0 20px;
+    font-size: 16px;
+    overflow: hidden;
+    width: fit-content;
+    max-width: 60%;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    font-family: sans-serif;
+    transition-property: all;
+    border-radius: 3px 0 0 0;
+    transition-duration: 0.4s;
+    z-index: 99999;
+}
+#notification span{
+    bottom: 0;
+    width: 100%;
+    height: 2.5px;
+    position: absolute;
+    transition-property: all;
+    transition-duration: 0.4s;
+}
+
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+    textarea{
+        font-size: 22px;
+    }
+    .text_area, #buttons, #questions, #pay{
+        height: 300px;
+        flex-basis: 500px;
+    }
+    #pay{
+        height: 340px;
+    }
+    .text_area span, #questions span, #buttons #span, #pay span, .question div, .question div{
+        font-size: 20px;
+    }
+    button{
+        font-size: 22px;
+        padding: 11px 16px;
+        margin: 11px auto;
+    }
+    #notification{
+        max-height: 70px;
+        font-size: 24px;
+        padding: 0 24px;
+    }
+    .input span{
+        top: -11px;
+        font-size: 18px;
+    }
+    .input input{
+        height: 26px;
+        padding: 8px;
+        font-size: 22px;
+    }
+    .question span{
+        font-size: 22px;
+        margin-bottom: 6px;
+    }
+    .question .right{
+        font-size: 22px;
+    }
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 1200px) {
+    textarea{
+        font-size: 20px;
+    }
+    .text_area, #questions, #buttons, #pay{
+        height: 280px;
+        flex-basis: 500px;
+    }
+    #pay{
+        height: 315px;
+    }
+    .text_area span, #questions span, #buttons #span, #pay span, .question div{
+        font-size: 18px;
+    }
+    button{
+        font-size: 20px;
+        padding: 9px 14px;
+        margin: 9px auto;
+    }
+    #notification{
+        max-height: 65px;
+        font-size: 22px;
+        padding: 0 23px;
+    }
+    .input span{
+        top: -11px;
+        font-size: 16px;
+    }
+    .input input{
+        height: 24px;
+        padding: 7px;
+        font-size: 20px;
+    }
+    .question span{
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+    .question .right{
+        font-size: 20px;
+    }
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+    textarea{
+        font-size: 18px;
+    }
+    .text_area, #questions, #buttons, #pay{
+        height: 260px;
+        flex-basis: 400px;
+    }
+    #pay{
+        height: 290px;
+    }
+    .text_area span, #questions span, #buttons #span, #pay span, .question div{
+        font-size: 16px;
+    }
+    button{
+        font-size: 18px;
+        padding: 7px 12px;
+        margin: 7px auto;
+    }
+    #notification{
+        max-height: 60px;
+        font-size: 22px;
+        padding: 0 23px;
+    }
+    .input span{
+        top: -10px;
+        font-size: 14px;
+    }
+    .input input{
+        height: 22px;
+        padding: 6px;
+        font-size: 18px;
+    }
+    .question span{
+        font-size: 18px;
+        margin-bottom: 4px;
+    }
+    .question .right{
+        font-size: 18px;
+    }
+}
+
+/* Landscape phones and smaller */
+@media (max-width: 480px) {
+    textarea{
+        font-size: 16px;
+    }
+    .text_area, #questions, #buttons, #pay{
+        height: 250px;
+        flex-basis: 300px;
+    }
+    #pay{
+        height: 265px;
+    }
+    .text_area span, #questions span, #buttons #span, #pay span, .question div{
+        font-size: 14px;
+    }
+    button{
+        font-size: 16px;
+        padding: 5px 10px;
+        margin: 5px auto;
+    }
+    #notification{
+        max-height: 55px;
+        font-size: 16px;
+        padding: 0 20px;
+    }
+    .input span{
+        top: -8px;
+        font-size: 12px;
+    }
+    .input input{
+        height: 20px;
+        padding: 5px;
+        font-size: 16px;
+    }
+    .question span{
+        font-size: 16px;
+        margin-bottom: 3px;
+    }
+    .question .right{
+        font-size: 16px;
+    }
+}
+
+#questions{
+    height: fit-content;
+}

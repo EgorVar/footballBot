@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css?v=1.0.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Настройки записи</title>
+</head>
+<body>
+    <div class="selectChat" id="selectChat">
+        <h1>Выберите чат</h1>
+        <select id="chatList"></select>
+        <button id="uploadChat">Продолжить</button>
+    </div>
+
+    <div class="parametersСhat" id="parametersСhat">
+        <div class="parameterСhat">
+        <span class="span" style="background-color: rgb(5, 61, 0, 0.6);">Настройки сообщений</span>
+        
+            <div class="parameterСhat">
+                <span class="span">Уведомление</span>
+                <textarea data-index="0"></textarea>
+            </div>
+            <div class="parameterСhat">
+                <span class="span">Запись</span>
+                <textarea data-index="1"></textarea>
+            </div>
+            <div class="parameterСhat">
+                <span class="span">Конец записи / Оплата состава</span>
+                <textarea data-index="2"></textarea>
+            </div>
+            <div class="parameterСhat">
+                <span class="span">Ожидание / Оплата резерва</span>
+                <textarea data-index="3"></textarea>
+            </div>
+            <div class="parameterСhat">
+                <span class="span">Итоговый список игроков</span>
+                <textarea data-index="4"></textarea>
+            </div>
+            <div class="parameterСhat">
+                <span class="span">Информация об игре</span>
+                <textarea data-index="5"></textarea>
+            </div>
+            <div class="parameterСhat">
+                <span class="span">Вход / Выход из состава</span>
+                <textarea data-index="6"></textarea>
+            </div>
+            <div class="parameterСhat">
+                <span class="span">Результаты деления на команды</span>
+                <textarea data-index="7"></textarea>
+            </div>
+        </div>
+        
+        <div class="parameterСhat">
+            <span data-param="true" class="span">Настройки записи</span>
+            <div class="input">
+                <span>Работа бота:</span>
+                <input type="checkbox" id="work">
+                <label for="work">
+                    <div>
+                        <span style="font-size: 16px;font-weight: normal;">OFF</span>
+                    </div>
+                </label>
+            </div>
+            <div class="input">
+                <span>Бан за молчание:</span>
+                <input type="checkbox" id="block">
+                <label for="block">
+                    <div>
+                        <span style="font-size: 16px;font-weight: normal;">OFF</span>
+                    </div>
+                </label>
+            </div>
+            <div class="input">
+                <span>Итоги в рейтинг:</span>
+                <input type="checkbox" id="rating">
+                <label for="rating">
+                    <div>
+                        <span style="font-size: 16px;font-weight: normal;">OFF</span>
+                    </div>
+                </label>
+            </div>
+            <h1>Настройка записи</h1>
+            <div class="input">
+                <span>День недели:</span>
+                <select id="date" data-index="0">
+                    <option value="-1" selected disabled>Выберите день недели</option>
+                    <option value="1">Понедельник</option>
+                    <option value="2">Вторник</option>
+                    <option value="3">Среда</option>
+                    <option value="4">Четверг</option>
+                    <option value="5">Пятница</option>
+                    <option value="6">Суббота</option>
+                    <option value="0">Воскресенье</option>
+                </select>
+            </div>
+            <div class="input">
+                <span>Время начала:</span>
+                <input type="text" class="date" data-index="0">
+            </div>
+            <div class="input">
+                <span>Время окончания:</span>
+                <input type="text" class="date" data-index="1">
+            </div>
+            <br>
+            <div class="input">
+                <span>Размер списка:</span>
+                <input type="number" data-index="2">
+            </div>
+            <div class="input">
+                <span>Ожидание (мин):</span>
+                <input type="number" data-index="3">
+            </div>
+            <div class="input">
+                <span>Уведомление (мин):</span>
+                <input type="number" data-index="4">
+            </div>
+            <div class="input">
+                <span>Оплата состава (мин):</span>
+                <input type="number" data-index="5">
+            </div>
+            <div class="input">
+                <span>Оплата резерва (мин):</span>
+                <input type="number" data-index="6">
+            </div>
+           <h1>Настройка оплаты</h1>			
+			<div class="manually">			
+					<div class="input">
+						<span>Тип оплаты:</span>
+						<select id="payType" data-index="1">
+							<option value="-1" selected disabled>Выберите способ оплаты</option>
+							<option value="true">Онлайн через бота</option>
+							<option value="false">Перевод на карту</option>
+						</select>
+					</div>
+			</div>			
+			<div class="manually">			
+					<div class="input">
+						<span>Тип онлайн оплаты:</span>
+						<select id="payOnlineType" data-index="2">
+							<option value="-1" selected disabled>Выберите тип</option>
+							<option value="true">Robokassa (белая)</option>
+							<option value="false">Qiwi (черная)</option>
+						</select>
+					</div>
+			</div>
+			<div class="automatically" style="display: inherit;">
+				<div class="input">
+					<span>Возврат на онлайн-оплату через:</span>
+					<input type="number" data-index="7">
+				</div>
+			</div>
+			<br>
+            <div class="input">
+                <span>ID Магазина:</span>
+                <input type="number" data-index="8">
+            </div>
+            <div class="input">
+                <span>Секретное слово:</span>
+                <input type="text" data-index="9">
+            </div>
+            <br>
+            <div class="input">
+                <span>ID основного билета:</span>
+                <input type="number" data-index="10">
+            </div>
+            <div class="input">
+                <span>Цена основного билета:</span>
+                <input type="number" data-index="11">
+            </div>
+            <br>
+            <div class="input">
+                <span>ID специального билета:</span>
+                <input type="number" data-index="12">
+            </div>
+            <div class="input">
+                <span>Цена специального билета:</span>
+                <input type="number" data-index="13">
+            </div>
+            <br>
+            <div class="input">
+                <span>Приоритет беседы:</span>
+                <input type="number" data-index="14">
+            </div>
+            <div class="input">
+                <span>URL для оценки игроков:</span>
+                <input type="text" data-index="15">
+            </div>
+        </div>
+        <div class="parameterСhat">
+            <span data-param="true" data-function="showUsers" class="span">Пользователи</span>
+            <div id="users"></div>
+            <div class="load">
+                <div></div>
+            </div>
+        </div>
+        <div class="parameterСhat">
+            <span data-param="true" data-function="showUsersRatings" class="span">Рейтинг</span>
+            <div id="ratings" style="display: flex; flex-wrap: wrap;"></div>
+            <div class="load">
+                <div></div>
+            </div>
+        </div>
+        <button style="background-color: rgba(255, 0, 0, 0.6);margin-top: 20px;width: calc(100% - 20px); font-weight: bold; color:white;" id="deleteChat">Удалить чат</button>
+
+        <button id="saveInfo">Сохранить изменения</button>
+    </div>
+
+    <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+    <script src="script.js?v=1.0.3"></script>
+</body>
+</html>
