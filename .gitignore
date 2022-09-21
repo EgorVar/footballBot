@@ -1,13 +1,3 @@
 node_modules
-.env
-phrases.js
-database/users_info
-database/chat_info
-database/chat_info_ratings
-database/users_img
-database/bot_settings
-teamDataBase/teamInfo
-teamDataBase/teamLog
-server/stageLogs.log
 files
 backups/
