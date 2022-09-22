@@ -5,7 +5,7 @@ const
 var bot_tg;
 var bot_tg1;
 
-require('./cronTask');
+//require('./cronTask');
 
 module.exports = async (bot, bot1) => {
     bot_tg = bot;
