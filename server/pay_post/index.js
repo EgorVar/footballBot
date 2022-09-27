@@ -26,8 +26,19 @@ module.exports = async (req, res) => {
     }
     userInfo = userInfo[0];
 
-    var orderId = chatInfo.discount.indexOf(userInfo.id) == -1 ? chatInfo.orderID : chatInfo.orderID1;
-    var orderAmount = chatInfo.discount.indexOf(userInfo.id) == -1 ? chatInfo.amount : chatInfo.amount1;
+    var orderId = null
+    var orderAmount = null
+
+    if(chatInfo.discount.indexOf(+userId) != -1) {
+        orderId = chatInfo.orderID1
+        orderAmount = chatInfo.amount1
+    } else if(chatInfo.individualPrice.indexOf(+userId) != -1) {
+        orderId = 186
+        orderAmount = userInfo.individual_price
+    } else {
+        orderId = chatInfo.orderID
+        orderAmount = chatInfo.amount
+    }
     var checkData = {
         AMOUNT: { data: orderAmount, errorText: 'fake AMOUNT' },
         MERCHANT_ID: { data: chatInfo.merchantID, errorText: 'fake MERCHANT_ID' },
