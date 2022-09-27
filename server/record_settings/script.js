@@ -443,7 +443,7 @@ function showUsers(element){
                 if(chatInfo?.nonPaidWithPriority?.indexOf(item.id)!=-1) statusPlayer = 'nonPaidUserWithPriority'
 
                 if(chatInfo.discount.indexOf(item.id)!=-1) statusPrice = 'discountPrice'
-                if(chatInfo.individualPrice.indexOf(item.id)!=-1 && statusPlayer !== 'baseUser' ) statusPrice = 'individualPrice'
+                if(chatInfo.individualPrice?.indexOf(item.id)!=-1 && statusPlayer !== 'baseUser' ) statusPrice = 'individualPrice'
 
 
 
